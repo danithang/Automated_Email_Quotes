@@ -1,13 +1,17 @@
 import smtplib
 import datetime as dt
 import random
+from dotenv import load_dotenv
+import os
 
 my_email = "pythontestberry@gmail.com"
+load_dotenv()
 # password from app generator on gmail
-password = "dluhzayjhamxzxbj"
+password = os.getenv("PASSWORD")
 other_email = "berrypythontest@yahoo.com"
 
 with open("./quotes.txt") as quotes:
+    # readlines is reading rows
     quotes_txt = quotes.readlines()
     # get current date and time
     now = dt.datetime.now()
